@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/register.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='icons/bootstrap-icons/bootstrap-icons.css')}}">
+	<link rel="icon" type="x/image" href="{{url_for('static',filename='icons/memesocial.png')}}">
+	<title>Meme Social | Register</title>
+</head>
+<body>
+<div class="maincontainer">
+	<div class="navbar">
+		<div class="logosection">
+			<img src="{{url_for('static',filename='icons/memesocial.png')}}">
+
+		</div>
+		<h4 class="mx-1 text-white">Meme Social</h4>
+		<div class="ml-auto">
+			<button class="btn btn-link text-white btn_signin">Sign In</button>
+		</div>
+	</div>
+	<div class="form-holder">
+		<form method="post" class="form_register" enctype="multipart/form-data">
+			<h4 class="text-center">-- REGISTER --</h4>
+			<p class="info_text text-center">Please fill Every field</p>
+			<div class="innerformholder">
+				<div class="block block0 block_active">
+					<div class="form-group">
+						<label>First Name: </label>
+						<input type="text" class="form-control" name="firstname" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label>Last Name: </label>
+						<input type="text" class="form-control" name="lastname" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label>Date of Birth: </label>
+						<input type="date" class="form-control" name="date_of_birth" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label>Phone No: </label>
+						<input type="text" class="form-control" name="phoneno" autocomplete="off" placeholder="+2547........">
+					</div>
+					<div class="button_holder button_holder1">
+						<button class="btn button_next" type="button" data_next="1">Next</button>
+					</div>
+				</div>
+				<div class="block block1">
+					<div class="form-group">
+						<label>Email: </label>
+						<input type="text" class="form-control" name="email" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label>Username: </label>
+						<input type="text" class="form-control" name="username" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label>Password: </label>
+						<input type="password" class="form-control" name="password" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label>Confirm Password: </label>
+						<input type="password" class="form-control" name="confirm_password" autocomplete="off">
+					</div>
+					<div class="button_holder">
+						<button class="btn button_prev" type="button" data_prev="0">Prev</button>
+						<button class="btn button_next" type="button" data_next="2">Next</button>
+					</div>
+				</div>
+				<div class="block block2">
+					<div class="form-group image_preview_holder">
+						<img src="" class="image_preview">
+						<div class="button_cancel_image bi bi-x"></div>
+					</div>
+					<div class="form-group upload_holder mt-1">
+						<input type="file" name="profile_pic" class="form-control button_upload">
+						<button class="btn button_custom_upload"><span class="bi bi-cloud mr-1"></span>Upload Profile</button>
+					</div>
+					<div class="button_holder">
+						<button class="btn button_prev" type="button" data_prev="1">Prev</button>
+						<button class="btn button_register" type="submit">Register</button>
+					</div>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+	
+	<div class="footer">
+		
+	</div>
+</div>
+<script type="text/javascript" src="{{url_for('static',filename='scripts/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='scripts/register.js')}}"></script>
+</body>
+</html>

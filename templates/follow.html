@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/follow.css')}}">
+<title>Meme Social | Follow</title>
+{%endblock%}
+{% block listblock%}
+	Follow
+{%endblock%}
+{% block contentbody%}
+<div class="follow_nav">
+	<div class="inner_follow_nav">
+		<button class="button_show_connect active_button">Connect</button>
+		<button class="button_show_followers">Followers</button>
+		<button class="button_show_following">Following</button>
+	</div>
+</div>
+<div class="follow_holder">
+	<div class="inner_follow_holder connect_holder active_follow_holder">
+		{%if connect_people==""%}
+			<div class="no_user_profile">
+				<h6 class="text-center">No user to follow</h6>
+			</div>
+		{%else%}
+		{%for connect_person in connect_people%}
+			{%if session['userid']!=connect_person[0]%}
+			<div class="profile_holder">
+				<div class="image_holder p_holder" connect_username="{{connect_person[1]}}">
+					<img src="/static/profile_images/{{connect_person[2]}}">
+				</div>
+				<div>
+					<p class="connect_username text-center">{{connect_person[1]}}</p>
+				</div>
+				<div class="button_connect_holder">
+					<button following_id="{{connect_person[0]}}" class="button_connect">follow</button>
+				</div>
+			</div>
+			{%endif%}
+		{%endfor%}
+		{%endif%}
+	</div>
+	<div class="inner_follow_holder followers_holder">
+		{%if my_followers==""%}
+			<div class="no_user_profile">
+				<h6 class="text-center"><span class="fa fa-users"></span> 0 follower</h6>
+			</div>
+		{%else%}
+			{%for my_follower in my_followers%}
+			<div class="profile_holder">
+				<div class="image_holder p_holder" connect_username="{{my_follower[1]}}">
+					<img src="/static/profile_images/{{my_follower[2]}}">
+				</div>
+				<div>
+					<p class="connect_username text-center">{{my_follower[1]}}</p>
+				</div>
+				
+			</div>
+			{%endfor%}
+		{%endif%}
+	</div>
+	<div class="inner_follow_holder following_holder">
+		{%if my_followings==""%}
+			<div class="no_user_profile">
+				<h6 class="text-center"><span class="fa fa-users"></span> 0 following</h6>
+			</div>
+		{%else%}
+			{%for my_following in my_followings%}
+			<div class="profile_holder" >
+				<div class="image_holder p_holder" connect_username="{{my_following[1]}}">
+					<img src="/static/profile_images/{{my_following[2]}}">
+				</div>
+				<div>
+					<p class="connect_username text-center">{{my_following[1]}}</p>
+				</div>
+				
+			</div>
+			{%endfor%}
+		{%endif%}
+	</div>
+</div>
+<script type="text/javascript" src="{{url_for('static',filename='scripts/follow.js')}}"></script>
+{% endblock%}

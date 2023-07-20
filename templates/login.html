@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/login.css')}}">
+	<link rel="icon" type="x/image" href="{{url_for('static',filename='icons/memesocial.png')}}">
+	<title>Meme Social | Login</title>
+</head>
+<body>
+<div class="maincontainer">
+	<div class="navbar">
+		<div class="logosection">
+			<img src="{{url_for('static',filename='icons/memesocial.png')}}">
+
+		</div>
+		<h4 class="mx-1 text-white">Meme Social</h4>
+		<div class="ml-auto">
+			<button class="btn btn-link text-white btn_signup">Sign Up</button>
+		</div>
+	</div>
+	<div class="form-holder">
+		<form method="post" class="form_login">
+			<h4 class="text-center">-- LOGIN --</h4>
+			<p class="info_text text-center">Please fill Every field</p>
+			<div class="form-group">
+				<label>Email: </label>
+				<input type="email" class="form-control" name="email" autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label>Password: </label>
+				<input type="password" class="form-control" name="password" autocomplete="off">
+			</div>
+			<div>
+				<p>Forgot Password? <a href="/reset">Recover</a></p>
+			</div>
+			<div>
+				<button class="btn button_login" type="submit">Login</button>
+			</div>
+		</form>
+	</div>
+	
+	<div class="footer">
+		
+	</div>
+</div>
+<script type="text/javascript" src="{{url_for('static',filename='scripts/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='scripts/login.js')}}"></script>
+</body>
+</html>

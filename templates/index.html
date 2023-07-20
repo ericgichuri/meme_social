@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/index.css')}}">
+<title>Meme Social | Home</title>
+{%endblock%}
+{% block listblock%}
+	Home
+{%endblock%}
+{% block contentbody%}
+<div class="post_main_holder px-2 py-1">
+	<div class="alert-holder">
+		<label class="alert alert-danger">
+			<strong>Alert</strong>
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		</label>
+	</div>
+	<div class="my_posts_holder">
+		{%if all_posts==""%}
+		<h6 class="text-center">No post</h6>
+		{%else%}
+			{%for post in all_posts%}
+			<div class="row justify-content-center inner_post_holder">
+				<div class="col-11">
+					<div class="d-flex user_info_holder" post_author="{{post[6]}}">
+						<div class="user_profile_holder">
+							<img src="static/profile_images/{{post[8]}}">
+						</div>
+						<div class="ml-2">
+							<span class="author_username">{{post[6]}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-11">
+					<p class="text-left mypost_caption">{{post[2]}}</p>
+					<p class="text-left mypost_hashtag">#{{post[3]}}</p>
+				</div>
+				<div class="col-11 my_post_img_holder">
+					<img class="img-fluid" src="static/meme_images/{{post[1]}}">
+				</div>
+				<div class="col-11">
+					<div class="d-flex justify-content-around post_reactions_holder">
+						{%if post[12]==session['userid']%}
+						<label post_id={{post[0]}} id="btn_like{{post[0]}}" class="btns btn_like liked">
+							<i class="fa fa-heart"></i>
+							<span class="likevalue">{{post[11]}}</span> 
+						</label>
+						{%else%}
+						<label post_id={{post[0]}} id="btn_like{{post[0]}}" class="btns btn_like">
+							<i class="fa fa-heart"></i>
+							<span class="likevalue">{{post[11]}}</span> 
+						</label>
+						{%endif%}
+						<label author="{{post[6]}}" post_id="{{post[0]}}" class="btns btn_comment"><i class="fa fa-retweet"></i></label>
+						<label class="btns btn_share"><i class="fa fa-share-square"></i></label>
+						<label class="btns btn_insight"><i class="fa fa-bar-chart"></i></label>
+					</div>
+					
+				</div>
+			</div>
+			{%endfor%}
+		{%endif%}
+	</div>
+</div>
+<script type="text/javascript" src="{{url_for('static',filename='scripts/index.js')}}"></script>
+{% endblock%}

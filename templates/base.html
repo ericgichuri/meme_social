@@ -1,0 +1,65 @@
+{%if user_details==""%}
+	url_for('func_login')
+{%else%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/base.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='icons/bootstrap-icons/bootstrap-icons.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='icons/font-awesome/css/font-awesome.min.css')}}">
+	<link rel="icon" type="x/image" href="{{url_for('static',filename='icons/memesocial.png')}}">
+	<script type="text/javascript" src="{{url_for('static',filename='scripts/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='scripts/js/bootstrap.min.js')}}"></script>
+	{% block head%}{%endblock%}
+</head>
+<body>
+<div class="maincontainer">
+	<div class="sidebar_holder">
+		<div class="header_holder">
+			<h6>Meme Social</h6>
+			<div class="logo_holder">
+				<img src="{{url_for('static',filename='icons/memesocial.png')}}">
+			</div>
+		</div>
+		<div class="menu_holder">
+			<ul>
+				<li class="button_home"><span class="fa fa-home"></span><span class="menu_text">Home</span></li>
+				<li class="button_search"><span class="fa fa-search"></span><span class="menu_text">Search</span></li>
+				<li class="button_follows"><span class="fa fa-user"></span><span class="menu_text">Friends</span></li>
+				<li class="button_post"><span class="fa fa-plus-circle"></span><span class="menu_text">Post</span></li>
+				<li class="button_notifys"><span class="fa fa-bell"></span><span class="menu_text">Notification</span></li>
+				<li class="button_profile">
+					<span class="fa fa-profile">
+						<img src="../static/profile_images/{{user_details[0][2]}}">
+					</span>
+					<span class="menu_text">Profile</span>
+				</li>
+				<li class="button_settings"><span class="fa fa-gear"></span><span class="menu_text">Settings</span></li>
+				<li class="button_logout">
+					<span class="fa fa-arrow-circle-left"></span><span class="menu_text">Logout</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="content_holder">
+		<div class="toggle_menu"><span class="fa fa-bars"></span></div>
+		<div class="header">
+			<h6>{% block listblock%}{%endblock%}</h6>
+		</div>
+		<div class="main_holder">
+
+			{% block contentbody%}
+			{% endblock%}
+		</div>
+	</div>
+	<div class="other_holder">
+		
+	</div>
+</div>
+<script type="text/javascript" src="{{url_for('static',filename='scripts/base.js')}}"></script>
+</body>
+</html>
+{%endif%}

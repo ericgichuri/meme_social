@@ -1,0 +1,111 @@
+.post_main_holder{
+	width: 100%;
+	position: relative;
+	overflow-x: hidden;
+}
+.my_posts_holder{
+	width: 100%;
+}
+.inner_post_holder{
+	border: 1px solid #F0F0F0;
+	padding: 0px;
+}
+.mypost_caption{
+	font-size: 12px;
+	color: #000000;
+	padding: 0px;
+	margin: 0px;
+	font-weight: 500;
+}
+.mypost_hashtag{
+	font-size: 10px;
+	font-weight: 600;
+	padding: 0px;
+	margin: 0px;
+}
+.inner_post_holder .my_post_img_holder .img-fluid{
+	height: 300px !important;
+	width: 100% !important;
+}
+.post_reactions_holder{
+	padding: 5px 1px 5px 1px;
+}
+.post_reactions_holder .btns{
+	color: #000088;
+	cursor: pointer;
+	padding: 3px;
+	font-size: 14px;
+	user-select: none;
+}
+.post_reactions_holder .btns.liked{
+	color: #FF0066;
+}
+.user_info_holder{
+	height: 40px !important;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	/*border: 1px solid #F0F0F0;*/
+	cursor: pointer;
+	padding: 2px 5px 2px 5px;
+
+}
+.user_info_holder .user_profile_holder{
+	height: 100%;
+	width: 40px;
+}
+.user_info_holder .user_profile_holder img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.user_info_holder .author_username{
+	font-size: 12px;
+	font-weight: 500;
+	color: #000088;
+}
+.inner_post_holder{
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.inner_post_holder .col-11{
+	border: 1px solid #F0F0F0;
+}
+@media screen and (max-width:800px){
+	.inner_post_holder .my_post_img_holder .img-fluid{
+		height: 250px !important;
+		width: 100% !important;
+	}
+}
+@media screen and (max-width:635px){
+	.inner_post_holder .my_post_img_holder .img-fluid{
+		height: 200px !important;
+		width: 100% !important;
+	}
+}
+@media screen and (max-width:375px){
+	.inner_post_holder .my_post_img_holder .img-fluid{
+		height: 180px !important;
+		width: 100% !important;
+	}
+}
+.alert-holder{
+	width: 100%;
+	position: fixed;
+	top: 50px;
+	left: 40%;
+	z-index: 999;
+	display: flex;
+}
+.alert-holder .alert{
+	width: 200px !important;
+	font-size: 12px;
+	height: 30px !important;
+	width: fit-content;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	display: none;
+}
+.alert-holder .alert a{
+	font-size: 14px;
+}

@@ -1,0 +1,107 @@
+.follow_nav{
+	width: 100%;
+	display: flex;
+	height: 30px;
+	justify-content: center;
+	align-items: center;
+}
+.follow_nav .inner_follow_nav button{
+	border: 1px solid #000088 !important;
+	box-shadow: none !important;
+	outline: none !important;
+	cursor: pointer;
+	width: 60px;
+	font-size: 11px;
+	background-color: #F0F0F0 !important;
+	color: #000088 !important;
+	padding: 4px 3px 4px 3px;
+	border-radius: 10px;
+}
+.follow_nav .inner_follow_nav button.active_button{
+	background-color: #000088 !important;
+	color: white !important;
+}
+.follow_holder{
+	width: 100%;
+	overflow-y: auto !important;
+}
+.follow_holder .inner_follow_holder{
+	display: grid;
+	grid-template-columns:110px 110px 110px 110px 110px;
+	gap: 10px;
+	padding: 3px 10px 3px 10px;
+
+}
+.follow_holder .inner_follow_holder .no_user_profile{
+	grid-column-start: 1;
+	grid-column-end: 7;
+	
+}
+.follow_holder .inner_follow_holder .profile_holder{
+	width: 100px;
+	padding: 3px;
+	border-radius: 10px;
+	height: 140px;
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	background-color: #F0F0F0;
+}
+.follow_holder .inner_follow_holder .profile_holder .image_holder{
+	position: relative;
+	height: 70%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.follow_holder .inner_follow_holder .profile_holder .image_holder img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+.inner_follow_holder .connect_username{
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+}
+.button_connect_holder{
+	width: 100%;
+	padding: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.button_connect_holder .button_connect{
+	height: 20px;
+	font-size: 10px;
+	background-color: #000088;
+	color: white;
+	border: 0px;
+	outline: none;
+	box-shadow: none;
+	cursor: pointer;
+	border-radius: 5%;
+}
+.follow_holder{
+	display: flex;
+}
+.follow_holder .inner_follow_holder{
+	display: none;
+	width: 100%;
+}
+.follow_holder .inner_follow_holder.active_follow_holder{
+	display: grid;
+}
+@media screen and (max-width:635px){
+	.follow_holder .inner_follow_holder{
+		grid-template-columns: 110px 110px 110px;
+		gap: 5px;
+	}
+}
+@media screen and (max-width:375px){
+	.follow_holder .inner_follow_holder{
+		grid-template-columns: 110px 110px;
+		gap: 3px;
+	}
+}

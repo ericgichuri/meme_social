@@ -1,0 +1,93 @@
+.post_holder{
+	width: 100%;
+}
+.post_holder .post_holder_inner{
+	width: 100%;
+	padding: 10px;
+}
+.post_holder .post_holder_inner form{
+	width: 100%;
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #000088;
+}
+form .image_preview_holder{
+	height: 150px;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+form .image_preview_holder .image_preview{
+	height: 100%;
+}
+form .form-control{
+	outline: none !important;
+	box-shadow: none !important;
+	height: 30px !important;
+	font-size: 12px;
+	border: none !important;
+	border: 1px solid black !important;
+}
+form .form-group label{
+	font-size: 12px !important;
+}
+form textarea.form-control{
+	height: 50px !important;
+}
+form .form-control:focus{
+	border: 1px solid #000088 !important;
+}
+form .button_group{
+	display: flex;
+}
+.form .button_group button{
+	width: 100px;
+	margin: 4px;
+	cursor: pointer;
+	background-color: #000088;
+	color: white;
+	outline: none;
+	border: none;
+	box-shadow: none;
+	font-size: 12px;
+	height: 30px;
+	border-radius: 5px;
+}
+.form .button_group button.button_reset{
+	background-color: #707070;
+	color: white;
+}
+.image_preview_holder{
+	width: 100%;
+	border: 1px solid black;
+}
+.image_upload_holder{
+	width: 100%;
+	position: relative;
+}
+.image_upload_holder .button_upload{
+	width: 100%;
+	height: 30px !important;
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+.image_upload_holder .button_custom_upload{
+	width: 100%;
+	cursor: pointer;
+	background-color: #000088;
+	color: white;
+	outline: none;
+	border: none;
+	box-shadow: none;
+	font-size: 12px;
+	height: 30px;
+	border-radius: 5px;
+}
+.info_text{
+	color: #FF0066;
+	font-size: 12px;
+	padding: 1px;
+}

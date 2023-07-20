@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/viewpost.css')}}">
+
+<title>Meme Social | Post</title>
+{%endblock%}
+{% block listblock%}
+	View Post
+{%endblock%}
+{% block contentbody%}
+<div class="post_holder">
+	<div class="my_posts_holder">
+		{%if posts==""%}
+		<h6 class="text-center">No post</h6>
+		{%else%}
+			{%for post in posts%}
+			<div class="row justify-content-center inner_post_holder">
+				<div class="col-11">
+					<div class="d-flex user_info_holder" post_author="{{author_details[0][1]}}">
+						<div class="user_profile_holder">
+							<img src="../static/profile_images/{{author_details[0][2]}}">
+						</div>
+						<div class="ml-2">
+							<span class="author_username">{{author_details[0][1]}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-11">
+					<p class="text-left mypost_caption">{{post[2]}}</p>
+					<p class="text-left mypost_hashtag">#{{post[3]}}</p>
+				</div>
+				<div class="col-11 my_post_img_holder">
+					<img class="img-fluid" src="../static/meme_images/{{post[1]}}">
+				</div>
+				<div class="col-11">
+					<div class="d-flex justify-content-around post_reactions_holder">
+						<label post_id={{post[0]}} id="btn_like{{post[0]}}" class="btns btn_like">
+							<i class="fa fa-heart"></i>
+							<span class="likevalue">{{total_likes[0][0]}}</span> 
+						</label>
+						<label author="{{post[6]}}" post_id="{{post[0]}}" class="btns btn_comment">
+							<i class="fa fa-retweet"></i>
+							<span class="likevalue">{{total_comments[0][0]}}</span>
+						</label>
+						<label class="btns btn_share"><i class="fa fa-share-square"></i></label>
+						<label class="btns btn_insight"><i class="fa fa-bar-chart"></i></label>
+					</div>
+				</div>
+				<div class="col-11">
+					<div class="input-group">
+						<input type="text" name="comment" id="comment_input" class="form-control" autocomplete="off" required>
+						<div class="input-group-prepend">
+							<button post_id="{{post[0]}}" id="{{author_details[0][0]}}" class="btn button_send_comment fa fa-send"></button>
+						</div>
+					</div>
+				</div>
+				<div class="view_comments">
+					{%if post_comments_details==""%}
+						<p class="comment">No comment</p>
+					{%else%}
+						{%for post_comments_detail in post_comments_details%}
+							<div class="comment_div">
+								{{post_comments_detail}}
+							</div>
+						{%endfor%}
+					{%endif%}
+				</div>
+			</div>
+			{%endfor%}
+		{%endif%}
+	</div>
+</div>
+<script type="text/javascript" src="{{url_for('static',filename='scripts/viewpost.js')}}"></script>
+{% endblock%}

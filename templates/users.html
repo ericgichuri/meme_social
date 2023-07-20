@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/users.css')}}">
+<title>Meme Social | Users</title>
+{%endblock%}
+{% block listblock%}
+	User: {{profile_data[0][6]}}
+{%endblock%}
+{% block contentbody%}
+<div class="user_holder">
+	{%if profile_data==""%}
+	<div>
+		<h6 class="text-center">User Not found</h6>
+	</div>
+	{%else%}
+	<h6>User Information</h6>
+	<div class="user_photo">
+		<img src="../static/profile_images/{{profile_data[0][7]}}">
+		<div class="following_info following_info1">
+			<p>Following: {{profile_followers}}</p>
+			<p>Followers: {{profile_following}}</p>
+		</div>
+		<div class="following_info">
+			<button>Follow</button>
+			<button>Email</button>
+		</div>
+		<div class="social_name_holder">
+			<h6 class="social_name">Meme Social</h6>
+		</div>
+	</div>
+	<div class="user_info">
+		<table class="table table-bordered table-condense table-hover table-sm">
+			<tr>
+				<td>Name</td>
+				<td>{{profile_data[0][1]}} {{profile_data[0][2]}}</td>
+			</tr>
+			<tr>
+				<td>Date Of Birth</td>
+				<td>{{profile_data[0][3]}}</td>	
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td>{{profile_data[0][6]}}</td>
+			</tr>
+			<tr>
+				<td>Phone no</td>
+				<td>{{profile_data[0][4]}}</td>	
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td>{{profile_data[0][5]}}</td>
+			</tr>
+			<tr>
+				<td>Joined</td>
+				<td>{{profile_data[0][8]}}</td>	
+			</tr>
+		</table>
+	</div>
+	<h6>Posts</h6>
+	<div>
+		{%if user_posts==""%}
+			<p class="text-center">0 post</p>
+		{%else%}
+			{%for post in user_posts%}
+				<p>{{post}}</p>
+			{%endfor%}
+		{%endif%}
+	</div>
+	{%endif%}
+</div>
+{% endblock%}

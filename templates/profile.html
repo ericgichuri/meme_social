@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/profile.css')}}">
+<title>Meme Social | Profile</title>
+{%endblock%}
+{% block listblock%}
+	Profile
+{%endblock%}
+{% block contentbody%}
+<div class="user_holder">
+	{%if profile_data==""%}
+	<div>
+		<h6 class="text-center">User Not found</h6>
+	</div>
+	{%else%}
+	<h6>User Information</h6>
+	<div class="user_photo">
+		<img src="../static/profile_images/{{profile_data[0][7]}}">
+		<div class="following_info following_info1">
+			<p class="btn btn-link"><span class="fa fa-user"></span> Following: {{profile_followers}} </p>
+			<p class="btn btn-link"><span class="fa fa-user"></span> Followers: {{profile_following}}</p>
+		</div>
+		<div class="following_info">
+			<button><span class="fa fa-link"></span>Link</button>
+			<button class="button_exit_account"><span class="fa fa-trash"></span>Delete</button>
+		</div>
+		<div class="social_name_holder">
+			<h6 class="social_name">Meme Social</h6>
+		</div>
+	</div>
+	<div class="user_info">
+		<table class="table table-bordered table-condense table-hover table-sm">
+			<tr>
+				<td>Name</td>
+				<td>{{profile_data[0][1]}} {{profile_data[0][2]}}</td>
+			</tr>
+			<tr>
+				<td>Date Of Birth</td>
+				<td>{{profile_data[0][3]}}</td>	
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td>{{profile_data[0][6]}}</td>
+			</tr>
+			<tr>
+				<td>Phone no</td>
+				<td>{{profile_data[0][4]}}</td>	
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td>{{profile_data[0][5]}}</td>
+			</tr>
+			<tr>
+				<td>Joined</td>
+				<td>{{profile_data[0][8]}}</td>	
+			</tr>
+		</table>
+	</div>
+	<h6>Change Password</h6>
+	<h6>Posts</h6>
+	<div class="my_posts_holder px-2 py-1">
+		{%if my_posts==""%}
+		{%else%}
+		{%for my_post in my_posts%}
+			<div class="row justify-content-center inner_post_holder">
+				<div class="col-11">
+					<p class="text-left mypost_caption">{{my_post[2]}}</p>
+					<p class="text-left mypost_hashtag">#{{my_post[3]}}</p>
+				</div>
+				<div class="col-11 my_post_img_holder">
+					<img class="img-fluid" src="static/meme_images/{{my_post[1]}}">
+				</div>
+				<div class="col-11">
+					<div class="d-flex justify-content-around post_reactions_holder">
+						<span class="btns btn_like"><i class="fa fa-heart"></i></span>
+						<span class="btns btn_comment"><i class="fa fa-retweet"></i></span>
+						<span class="btns btn_comment"><i class="fa fa-share-square"></i></span>
+						<span class="btns btn_insight"><i class="fa fa-bar-chart"></i></span>
+					</div>
+					
+				</div>
+			</div>
+		{%endfor%}
+		{%endif%}
+	</div>
+	{%endif%}
+</div>
+{% endblock%}
